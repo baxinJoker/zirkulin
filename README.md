@@ -1,2 +1,0 @@
-# zirkulin
-zirkulin project
