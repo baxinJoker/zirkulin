@@ -103,7 +103,7 @@
     },
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wx4221db901fae8460",
         "setting" : {
             "urlCheck" : false
         },
@@ -115,7 +115,8 @@
         },
         "uniStatistics" : {
             "enable" : true
-        }
+        },
+        "lazyCodeLoading": "requiredComponents"
     },
     "mp-alipay" : {
         "usingComponents" : true,
