@@ -5,7 +5,7 @@
       mode="scaleToFill"
       width="100%"
       height="100%"
-      src="/static/firstPage.png"
+      src="https://zilean.vip/static/imgs/bg6.png"
     ></u-image>
   </view>
 </template>

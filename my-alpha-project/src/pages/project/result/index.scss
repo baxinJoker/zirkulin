@@ -1,3 +1,24 @@
-.home{
-    
+.result {
+    .content {
+        padding-top: 140rpx;
+        padding-left: 30rpx;
+        padding-right: 30rpx;
+
+        .person-info {
+            &>.desc {
+                font-size: 40rpx;
+                font-family: 黑体;
+                font-weight: bold;
+                color: #fff;
+                margin-bottom: 8rpx;
+            }
+        }
+
+        .norm {
+            font-size: 30rpx;
+            font-family: 黑体;
+            color: #fff;
+            width: 96rpx;
+        }
+    }
 }

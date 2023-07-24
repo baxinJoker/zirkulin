@@ -1,3 +1,25 @@
-.home{
-    
+.test {
+    .item-container {
+        padding-top: 580rpx;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        .item {
+            width: 645rpx;
+            height: 78rpx;
+            border-radius: 39rpx;
+            margin-bottom: 4rpx;
+            font-size: 40rpx;
+            line-height: 78rpx;
+            font-weight: bold;
+            color: #231815;
+            &.selected-item{
+                font-size: 36rpx;
+                color: #fff;
+                // opacity: .8;
+            }
+        }
+    }
 }

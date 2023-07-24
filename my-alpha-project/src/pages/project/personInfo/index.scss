@@ -1,3 +1,37 @@
-.home{
-    
+.personInfo {
+    .content {
+        padding-top: 587rpx;
+
+        ::v-deep .u-border-bottom:after {
+            border: 0;
+        }
+
+        ::v-deep .u-form {
+            padding-left: 79rpx;
+            padding-right: 126.5rpx;
+
+            .u-form-item:first-child {
+                padding-top: 0;
+            }
+        }
+    }
+
+    // #ifdef MP-WEIXIN
+    ::v-deep.u-input {
+        background: #fff;
+        height: 78rpx;
+
+        .u-input__input {
+            min-height: 78rpx;
+        }
+    }
+    // #endif
+    .report-btn {
+        position: fixed;
+        bottom: 630rpx;
+        left: 255rpx;
+        z-index: 1000;
+        width: 242rpx;
+        height: 90rpx;
+    }
 }

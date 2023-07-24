@@ -1,3 +1,18 @@
 .auth{
-    
+    .item-container{
+        padding-left: 117rpx;
+        padding-right: 117rpx;
+        .item{
+            font-weight: bold;
+            width: 220rpx;
+            height: 220rpx;
+            background-color: #fff;
+            opacity: .8;
+            border-radius: 8rpx;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+        }
+    }
 }

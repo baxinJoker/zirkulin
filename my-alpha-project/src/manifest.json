@@ -1,5 +1,5 @@
 {
-    "name" : "hello uni-app",
+    "name" : "ai height  test",
     "appid" : "__UNI__HelloUniApp",
     "description" : "应用描述",
     "versionName" : "1.0.0",
@@ -105,7 +105,10 @@
     "mp-weixin" : {
         "appid" : "wx4221db901fae8460",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "es6" : true,
+            "minified" : true,
+            "postcss" : false
         },
         "usingComponents" : true,
         "permission" : {
@@ -116,7 +119,7 @@
         "uniStatistics" : {
             "enable" : true
         },
-        "lazyCodeLoading": "requiredComponents"
+        "lazyCodeLoading" : "requiredComponents"
     },
     "mp-alipay" : {
         "usingComponents" : true,
