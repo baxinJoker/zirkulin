@@ -1,10 +1,8 @@
 <template>
-  <view class="home full-height" @click="jumpAuth">
+  <view class="home full-height">
     <u-image
-      class="fixed-img"
-      mode="scaleToFill"
+      mode="widthFix"
       width="100%"
-      height="100%"
       src="https://zilean.vip/static/imgs/bg6.png"
     ></u-image>
   </view>

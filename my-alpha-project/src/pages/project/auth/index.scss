@@ -1,4 +1,11 @@
 .auth{
+    .content{
+        padding-top: 628rpx;
+        align-items: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
     .item-container{
         padding-left: 117rpx;
         padding-right: 117rpx;

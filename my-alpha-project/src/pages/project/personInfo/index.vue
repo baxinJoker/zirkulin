@@ -38,12 +38,17 @@
     <u-button class="report-btn" type="warning" @click="jumpResult"
       >生成报告</u-button
     >
+    <custom-loading v-if="loading" />
   </view>
 </template>
 
 <script>
 import { mapState, mapGetters, mapMutations } from "vuex";
+import customLoading from "./components/loading.vue";
 export default {
+  components: {
+    customLoading,
+  },
   data() {
     return {
       uploadHeader: {},
@@ -52,6 +57,7 @@ export default {
         nickname: [{ required: true, message: "昵称为必填项！" }],
         submitAge: [{ required: true, message: "年龄为必填项！" }],
       },
+      loading: false,
     };
   },
   computed: {
@@ -62,39 +68,57 @@ export default {
   methods: {
     ...mapMutations(["saveResult"]),
     jumpResult() {
-      this.$refs.uForm.validate(async (valid) => {
+      const _this = this
+      _this.$refs.uForm.validate(async (valid) => {
         if (valid) {
+          _this.loading = true;
           uni.uploadFile({
             url: "https://zilean.vip/zkl/submit",
-            filePath: this.projectForm.tempFilePath,
+            filePath: _this.projectForm.tempFilePath,
             fileType: "audio",
             name: "file",
-            header: this.uploadHeader,
+            header: _this.uploadHeader,
             formData: {
-              ...this.projectForm,
-              ...this.form,
-              submitAge: Number(this.form.submitAge),
+              ..._this.projectForm,
+              ..._this.form,
+              submitAge: Number(_this.form.submitAge),
             },
             success: (data) => {
               try {
                 const res = JSON.parse(data.data);
                 if (res.msg == "成功") {
-                  this.saveResult({ ...res.data });
+                  _this.saveResult({ ...res.data });
+                  _this.loading = false;
                   uni.navigateTo({
                     url: `/pages/project/result/index`,
                   });
+                } else {
+                  uni.showToast({
+                    icon: "none",
+                    title: res.msg.includes('4')?'录音时长不能少于4秒！':'报告生成失败',
+                    position: "top",
+                  });
+                  _this.loading = false;
                 }
               } catch (error) {
+                uni.showToast({
+                  icon: "none",
+                  title: "报告生成失败",
+                  position: "top",
+                });
+                _this.loading = false;
                 uni.navigateTo({
                   url: `/pages/project/result/index`,
                 });
               }
             },
             fail: (err) => {
-              uni.navigateTo({
-                url: `/pages/project/result/index`,
+              uni.showToast({
+                icon: "none",
+                title: "报告生成失败",
+                position: "top",
               });
-              console.log(err);
+              _this.loading = false;
             },
           });
         } else {

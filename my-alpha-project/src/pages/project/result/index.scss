@@ -1,9 +1,19 @@
+@mixin result-font {
+    font-size: 36rpx;
+    font-family: 黑体;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding-left: 70rpx;
+    padding-right: 70rpx;
+}
+
 .result {
     .content {
-        padding-top: 140rpx;
+        padding-top: 160rpx;
         padding-left: 30rpx;
         padding-right: 30rpx;
-
         .person-info {
             &>.desc {
                 font-size: 40rpx;
@@ -19,6 +29,26 @@
             font-family: 黑体;
             color: #fff;
             width: 96rpx;
+        }
+
+        .result-text-percent {
+            @include result-font();
+            bottom: 112rpx;
+        }
+
+        .result-percent {
+            @include result-font();
+            bottom: 184rpx;
+        }
+
+        .result-age {
+            @include result-font();
+            bottom: 460rpx;
+        }
+
+        .result-grade {
+            @include result-font();
+            bottom: 320rpx;
         }
     }
 }

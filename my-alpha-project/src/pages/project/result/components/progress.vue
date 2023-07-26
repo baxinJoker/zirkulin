@@ -5,8 +5,16 @@
         :style="{ width: `${percent}%`, background: color }"
         class="progress-content"
       ></view>
+      <u-image
+        v-if="!!showIcon"
+        src="/static/icons/bee.png"
+        :width="66"
+        :height="66"
+        :style="{left:`calc(${percent}% - 33rpx)`}"
+        class="progress-icon"
+      />
     </view>
-    <view class="percent">{{ percent }}%</view>
+    <view class="percent" v-if="!showIcon">{{ percent }}%</view>
   </view>
 </template>
 
@@ -24,6 +32,10 @@ export default {
       type: Number,
       default: 0,
     },
+    showIcon: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {},
   methods: {},
@@ -40,16 +52,21 @@ export default {
   flex-direction: row;
   align-items: center;
   .progress {
+    position: relative;
     height: 48rpx;
     background: transparent;
     border-radius: 24rpx;
     border: 6rpx solid #fff;
-    overflow: hidden;
+    // overflow: hidden;
     .progress-content {
       height: 100%;
       border-radius: 24rpx;
-    //   border-right: 6rpx solid #fff;
+      //   border-right: 6rpx solid #fff;
     }
+  }
+  .progress-icon {
+    position: absolute;
+    bottom: 0;
   }
   .percent {
     width: 80rpx;

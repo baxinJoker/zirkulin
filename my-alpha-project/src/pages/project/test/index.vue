@@ -101,7 +101,7 @@ export default {
       }
     },
     jumpRecording() {
-      this.changeParamters({ scene: [...this.scene] });
+      this.changeParamters({ scene: JSON.stringify([...this.scene]) });
       uni.navigateTo({
         url: `/pages/project/recording/index`,
       });

@@ -7,13 +7,19 @@
       height="100%"
       src="https://zilean.vip/static/imgs/bg1.png"
     ></u-image>
-    <view class="content fixed-content u-flex u-col-center">
-      <view class="u-flex-1 u-flex u-row-between item-container">
-        <view class="item" @click="jumpTest(1)">
+    <view class="content fixed-content">
+      <view class="u-flex u-row-center item-container u-m-b-48">
+        <view class="item" @click="jumpTest('teacher')">
+          <view class="u-text-center">我是光荣的</view>
+          <view class="u-text-center">人民教师</view>
+        </view>
+      </view>
+      <view class="u-flex u-row-between item-container">
+        <view class="item" @click="jumpTest('1')">
           <view class="u-text-center">我的工作是</view>
           <view class="u-text-center">高频用嗓职业</view>
         </view>
-        <view class="item" @click="jumpTest(0)">
+        <view class="item" @click="jumpTest('0')">
           <view class="u-text-center">我的工作</view>
           <view class="u-text-center">并不费嗓子</view>
         </view>
